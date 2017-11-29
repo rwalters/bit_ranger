@@ -1,0 +1,29 @@
+PATH
+  remote: .
+  specs:
+    bit_ranger (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    given_core (3.8.0)
+      sorcerer (>= 0.3.7)
+    minitest (5.10.3)
+    minitest-given (3.8.0)
+      given_core (= 3.8.0)
+      minitest (> 4.3)
+    rake (10.5.0)
+    sorcerer (1.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bit_ranger!
+  bundler (~> 1.16)
+  minitest (~> 5.0)
+  minitest-given (~> 3.8)
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.16.0
