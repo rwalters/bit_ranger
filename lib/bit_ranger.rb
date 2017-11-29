@@ -6,36 +6,36 @@ module BitRanger
       {test1: 0, test2: 1, test3: 3}.freeze
     end
 
-    def toggle(user, setting)
-      user.settings ^= (1 << settings[setting.to_sym])
+    def toggle(flags, setting)
+      flags ^ bitmask_for(setting)
     end
 
-    def enable(user, setting)
-      user.settings |= (1 << settings[setting.to_sym])
+    def enable(flags, setting)
+      flags | bitmask_for(setting)
     end
 
-    def disable(user, setting)
-      user.settings &= ~(1 << settings[setting.to_sym])
+    def disable(flags, setting)
+      flags & ~bitmask_for(setting)
     end
 
-    def list(user)
+    def list(flags)
       settings
         .keys
         .select do |k|
-          enabled?(user, k)
+          enabled?(flags, k)
         end
         .map(&:to_s)
         .sort
     end
 
-    def enabled?(user, setting)
-      (user.settings & bitmask_for(setting)).positive?
+    def enabled?(flags, setting)
+      (flags & bitmask_for(setting)).positive?
     end
 
     private
 
     def bitmask_for(setting)
-      (1 << settings[setting])
+      (1 << settings[setting.to_sym])
     end
   end
 end
