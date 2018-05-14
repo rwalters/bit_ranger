@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Who was that masked bit?}
   spec.description   = %q{Use bitmasks to handle boolean settings or feature flags}
-  spec.homepage      = "https://github.com/rwatlers/bit_ranger"
+  spec.homepage      = "https://github.com/rwalters/bit_ranger"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
